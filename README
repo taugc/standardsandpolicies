@@ -1,0 +1,48 @@
+## TauGC Guidelines 1.0 - Jan 2020
+
+==
+Standard guidelines, datasets and technical infrastructure to validate and benchmark reproducible and reliable pipelines and tools
+==
+
+** Illumina datasets:**
+
+- MiSeq_16S_Metagenomics_2x300_ATCC_Microbiome_Standard_MSA-1003
+Replicates of the sample ATCC Microbiome Standard MSA-1003 (20 Strain Staggered Mix Genomic Material ATCC® MSA-1003™) were prepared using an Illumina developed 16S protocol. Samples were sequenced on the MiSeq system at 2x300 bp read length with dual indexing. Analysis was performed on BaseSpace using the 16S Metagenomics app.
+
+- MiSeq_Myeloid_RNA_Panel_Brain_SeraSeq_Samples
+Brain and SeraSeq samples were prepared using the AmpliSeq for Illumina Myeloid Panel kit. Samples were sequenced on the MiSeq system at 2x151 bp read length with dual indexing. Analysis was performed on BaseSpace using the RNA Amplicon app.
+
+- MiSeq_Nextera_DNA_Flex_Ecoli_Bcereus_Rsphaeroides
+3 replicates each of B. cereus, E. coli, and R. sphaeroides at 1ng and 100ng DNA input were prepared using the Nextera DNA Flex library prep kit and sequenced at 2x151 on a MiSeq instrument.
+
+- NextSeq550_Nextera_DNA_Flex_SoilMetagenomics
+5 soil samples were extracted with the Qiagen PowerSoil kit and 100ng of each were used as gDNA input for Nextera DNA Flex library preparation. All libraries were sequenced on the NextSeq 550 platform with a 2x151 run configuration.  Samples were analyzed with the Kraken2 Metagenomics app in BaseSpace.
+
+------------------------------------------------------------------------
+All data should be downloaded from BaseSpace Data Central - Public Data:
+https://basespace.illumina.com/datacentral
+------------------------------------------------------------------------
+
+** Project and Analysis Folder Structure **
+
+project/
++-- analysis1
+¦   +-- Snakefile
+¦   +-- fastq
+¦   ¦   +-- SampleName_S10_L001_R1_001.fastq.gz
+¦   ¦   +-- SampleName_S10_L001_R2_001.fastq.gz
+¦   ¦   +-- result1
+¦   ¦   +-- result2
+¦   +-- sample.metadata.txt
++-- analysis2
+    +-- Snakefile
+    +-- fastq
+    ¦   +-- SampleName_S10_L001_R1_001.fastq.gz
+    ¦   +-- SampleName_S10_L001_R2_001.fastq.gz
+    ¦   +-- results1
+    ¦   +-- results2
+    --- sample.metadata.txt
+
+** Tools **
+
+Conda and Docker environments 
